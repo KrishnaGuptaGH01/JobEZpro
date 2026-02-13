@@ -1,0 +1,155 @@
+/* stylelint-disable */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here.
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Natural aesthetic theme - organic, warm, human-centered */
+    --radius: 1rem;
+    
+    /* Base colors - soft, warm neutrals */
+    --background: 30 20% 98%;
+    --foreground: 25 15% 15%;
+    
+    /* Card colors - subtle warmth */
+    --card: 30 25% 99%;
+    --card-foreground: 25 15% 15%;
+    
+    /* Popover colors */
+    --popover: 30 25% 99%;
+    --popover-foreground: 25 15% 15%;
+    
+    /* Primary - vibrant teal/green (growth & career) */
+    --primary: 170 65% 45%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Secondary - warm coral/orange (energy & opportunity) */
+    --secondary: 20 85% 65%;
+    --secondary-foreground: 0 0% 100%;
+    
+    /* Muted - soft neutral */
+    --muted: 30 15% 92%;
+    --muted-foreground: 25 10% 45%;
+    
+    /* Accent - soft purple (innovation & AI) */
+    --accent: 270 50% 92%;
+    --accent-foreground: 270 60% 35%;
+    
+    /* Destructive */
+    --destructive: 0 75% 55%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Borders and inputs - subtle */
+    --border: 30 20% 88%;
+    --input: 30 20% 88%;
+    --ring: 170 65% 45%;
+    
+    /* Chart colors - nature-inspired palette */
+    --chart-1: 170 65% 45%;
+    --chart-2: 20 85% 65%;
+    --chart-3: 270 60% 55%;
+    --chart-4: 140 55% 50%;
+    --chart-5: 45 90% 60%;
+    
+    /* Sidebar colors */
+    --sidebar-background: 30 20% 98%;
+    --sidebar-foreground: 25 15% 25%;
+    --sidebar-primary: 170 65% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 30 25% 95%;
+    --sidebar-accent-foreground: 25 15% 25%;
+    --sidebar-border: 30 20% 90%;
+    --sidebar-ring: 170 65% 45%;
+  }
+
+  .dark {
+    /* Dark mode - deep, warm tones */
+    --background: 25 20% 8%;
+    --foreground: 30 15% 95%;
+    
+    --card: 25 20% 10%;
+    --card-foreground: 30 15% 95%;
+    
+    --popover: 25 20% 10%;
+    --popover-foreground: 30 15% 95%;
+    
+    /* Primary - brighter teal for dark mode */
+    --primary: 170 60% 55%;
+    --primary-foreground: 25 20% 8%;
+    
+    /* Secondary - vibrant coral */
+    --secondary: 20 80% 60%;
+    --secondary-foreground: 25 20% 8%;
+    
+    --muted: 25 15% 18%;
+    --muted-foreground: 30 10% 65%;
+    
+    /* Accent - lighter purple for dark mode */
+    --accent: 270 40% 20%;
+    --accent-foreground: 270 50% 85%;
+    
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 25 15% 20%;
+    --input: 25 15% 20%;
+    --ring: 170 60% 55%;
+    
+    /* Chart colors - vibrant for dark mode */
+    --chart-1: 170 60% 55%;
+    --chart-2: 20 80% 60%;
+    --chart-3: 270 55% 60%;
+    --chart-4: 140 50% 55%;
+    --chart-5: 45 85% 65%;
+    
+    --sidebar-background: 25 20% 8%;
+    --sidebar-foreground: 30 15% 90%;
+    --sidebar-primary: 170 60% 55%;
+    --sidebar-primary-foreground: 25 20% 8%;
+    --sidebar-accent: 25 15% 15%;
+    --sidebar-accent-foreground: 30 15% 90%;
+    --sidebar-border: 25 15% 18%;
+    --sidebar-ring: 170 60% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  /* Gradient text utility for headings */
+  .gradient-text {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  
+  /* Organic shapes and soft shadows */
+  .organic-shadow {
+    box-shadow: 0 8px 30px -8px hsl(var(--primary) / 0.15);
+  }
+  
+  .organic-shadow-lg {
+    box-shadow: 0 20px 50px -12px hsl(var(--primary) / 0.2);
+  }
+  
+  /* Smooth transitions */
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
